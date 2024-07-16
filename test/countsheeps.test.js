@@ -1,59 +1,56 @@
+// countsheeps.test.js
+
 import { describe, expect, it } from "vitest";
 import { countSheeps } from "../app.js";
 
 describe('How many sheep are there?', () => {
 
-    it('The true ones are sheep, the false ones are wolves, returns the number of sheeps', () => {
+    it('should return the number of sheeps in the list', () => {
+        const list1 = [true, true, true, false, true, true, true, true, true, false, true, false, true, false, false, true, true, true, true, true, false, false, true, true];
+        const expected = 17;
 
-        const sheepCount= 0
-        const petalsFlower2 = 4
-        const expected = true;
+        const result = countSheeps(list1);
 
-        const result = isLove(petalsFlower1, petalsFlower2);
-
-        expect(result).toBeTypeOf("boolean");
+        expect(result).toBeTypeOf("number");
         expect(result).toEqual(expected);
+    });
 
+    it('should return 0 if there are no sheeps in the list', () => {
+        const list2 = [false, false, false];
+        const expected = 0;
 
-    })
+        const result = countSheeps(list2);
 
-    it('one petal is equal to the other(odd-odd or even-even), returns false', () => {
-
-        const petalsFlower1 = 2
-        const petalsFlower2 = 2
-        const expected = false;
-
-        const result = isLove(petalsFlower1, petalsFlower2);
-
-        expect(result).toBeTypeOf("boolean");
+        expect(result).toBeTypeOf("number");
         expect(result).toEqual(expected);
+    });
 
-    })
+    it('should return 0 if there are no sheeps in the list', () => {
+        const list2 = [false, false, false];
+        const expected = 0;
 
-    it('one petal is even and the other odd, returns true', () => {
+        const result = countSheeps(list2);
 
-        const petalsFlower1 = 0
-        const petalsFlower2 = 1
-        const expected = true;
-
-        const result = isLove(petalsFlower1, petalsFlower2);
-
-        expect(result).toBeTypeOf("boolean");
+        expect(result).toBeTypeOf("number");
         expect(result).toEqual(expected);
+    });
 
-    })
+    it('should return the correct message if there are no sheeps', () => {
+        const list2 = [false, false, false];
+        const result = countSheeps(list2);
 
-    it('one petal is equal to the other (odd-odd or even-even), returns false', () => {
+        expect(result).toEqual(0);
+        expect(result === 0 ? "UPS!!! Wolfs eaten Sheeps" : `There are ${result} sheep in total`).toEqual("UPS!!! Wolfs eaten Sheeps");
+    });
 
-        const petalsFlower1 = 0
-        const petalsFlower2 = 0
-        const expected = false;
+    it('should return the correct message if there are sheeps', () => {
+        const list1 = [true, true, true, false, true, true, true, true, true, false, true, false, true, false, false, true, true, true, true, true, false, false, true, true];
+        const result = countSheeps(list1);
 
-        const result = isLove(petalsFlower1, petalsFlower2);
+        expect(result).toEqual(17);
+        expect(result === 0 ? "UPS!!! Wolfs eaten Sheeps" : `There are ${result} sheep in total`).toEqual("There are 17 sheep in total");
+    });
 
-        expect(result).toBeTypeOf("boolean");
-        expect(result).toEqual(expected);
+  
+});
 
-    })
-
-})
