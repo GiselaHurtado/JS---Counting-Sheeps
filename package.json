@@ -1,0 +1,22 @@
+{
+  "name": "js---counting-sheeps",
+  "version": "1.0.0",
+  "description": "Instrucciones:",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GiselaHurtado/JS---Counting-Sheeps.git"
+  },
+  "author": "Gisela",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/GiselaHurtado/JS---Counting-Sheeps/issues"
+  },
+  "homepage": "https://github.com/GiselaHurtado/JS---Counting-Sheeps#readme",
+  "devDependencies": {
+    "vitest": "^2.0.3"
+  }
+}
